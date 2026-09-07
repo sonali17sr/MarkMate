@@ -262,54 +262,59 @@ Backend Validation
    - Python
    - Flask
    - DeepFace
+
 📂 Project Structure
-MarkMate/
+
+       MarkMate/
 │
-├── frontend/
+├── frontend/                     # React + Vite frontend
 │   │
 │   ├── src/
-│   │   ├── pages/
+│   │   ├── components/           # Reusable UI components
+│   │   │   ├── QRDisplay
+│   │   │   ├── AttendanceTable
+│   │   │   └── ProtectedRoute
+│   │   │
+│   │   ├── pages/                # Application pages
 │   │   │   ├── Login
 │   │   │   ├── Register
 │   │   │   ├── TeacherDashboard
 │   │   │   ├── StudentScan
 │   │   │   └── StudentHistory
 │   │   │
-│   │   ├── components/
-│   │   │   ├── QRDisplay
-│   │   │   ├── AttendanceTable
-│   │   │   └── ProtectedRoute
+│   │   ├── api/                  # API service configuration
 │   │   │
-│   │   └── api/
+│   │   └── App.jsx
 │   │
 │   └── package.json
 │
-├── backend/
+├── backend/                      # Node.js + Express backend
 │   │
 │   ├── src/
-│   │   ├── models/
+│   │   ├── models/               # MongoDB models
 │   │   │   ├── User.js
 │   │   │   ├── Session.js
 │   │   │   └── Attendance.js
 │   │   │
-│   │   ├── routes/
+│   │   ├── routes/               # API routes
 │   │   │   ├── auth.js
 │   │   │   ├── sessions.js
 │   │   │   ├── qr.js
 │   │   │   └── attendance.js
 │   │   │
-│   │   ├── middleware/
+│   │   ├── middleware/           # Authentication middleware
 │   │   │   └── auth.js
 │   │   │
-│   │   └── utils/
+│   │   └── utils/                # Utility functions
 │   │
 │   └── server.js
 │
-├── face-service/
+├── face-service/                 # Optional face verification service
 │   ├── app.py
 │   └── requirements.txt
 │
 └── README.md
+
 🗄️ Database Design
 
 The system primarily manages three main entities.
